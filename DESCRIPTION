@@ -1,0 +1,13 @@
+Package: rada4u
+Title: Tools for working with rada4u API
+Version: 0.0.0.9000
+Authors@R: person("Andriy", "Gazin", email = "angriy.gazin@gmail.com", role = c("aut", "cre"))
+Description: Getting data from rada4u API and converting it to data frames for further analysis and visualization
+Depends: R (>= 3.4.2)
+License: GNU General Public License v3.0
+Encoding: UTF-8
+LazyData: true
+Imports:
+  httr,
+  jsonlite
+RoxygenNote: 6.0.1
