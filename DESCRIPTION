@@ -1,8 +1,8 @@
 Package: rada4u
-Title: Tools for working with rada4u API
+Title: Work with rada4you.org API
 Version: 0.0.0.9000
 Authors@R: person("Andriy", "Gazin", email = "angriy.gazin@gmail.com", role = c("aut", "cre"))
-Description: Getting data from rada4u API and converting it to data frames for further analysis and visualization
+Description: Набір функцій для отримання даних з порталу rada4you.org та трансформації їх у табличний формат
 Depends: R (>= 3.4.2)
 License: GNU General Public License v3.0
 Encoding: UTF-8
