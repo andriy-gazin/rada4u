@@ -20,11 +20,11 @@ policy_details <- function(id = 1, key) {
 
   } else {
 
-    details = data.frame()
+    details <- data.frame()
 
     for(i in id) {
 
-      request = httr::GET(url = "https://rada4you.org/",
+      request <- httr::GET(url = "https://rada4you.org/",
                           path = paste0("api/v1/policies/", i, ".json"),
                           query = list(key = key))
 
@@ -43,7 +43,7 @@ policy_details <- function(id = 1, key) {
                             description = response$description,
                             provisional = response$provisional)
 
-        details = rbind.data.frame(details, detail)
+        details <- rbind.data.frame(details, detail)
 
         Sys.sleep(1)
 

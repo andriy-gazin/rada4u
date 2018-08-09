@@ -1,12 +1,12 @@
-#' Отримайте перелік всіх доступних політик
+#' Отримайте перелік всіх народних депутатів
 #'
 #' @param key Ваш персональний ключ API, отриманий на rada4you.org
 #'
-#' @return Датафрейм, який містить всі доступні політики
+#' @return Датафрейм, який містить всі доступні політик
 #'
 #' @export
 
-policies <- function(key) {
+mps <- function(key) {
 
   if(is.null(key) | nchar(key) == 0) {
 
@@ -14,25 +14,24 @@ policies <- function(key) {
 
   } else {
 
-    request <- httr::GET(url = "https://rada4you.org/api/v1/policies.json",
+    request <-httr::GET(url = 'https://rada4you.org/api/v1/people.json',
                   query = list(key = key))
 
     if(httr::status_code(request) != 200) {
 
-    message(paste('Помилка. Код відповіді сервера:'), httr::status_code(request))
+      message(paste('Помилка. Код відповіді сервера:'), httr::status_code(request))
 
     } else {
+
 
       response <-  httr::content(request, as = 'text')
 
       response <- jsonlite::fromJSON(response)
-
     }
 
   }
 
-  message(paste('Знайдено', nrow(response), 'політик'))
+  message(paste('Знайдено', nrow(response), 'нардепів'))
 
   return(response)
-
 }
