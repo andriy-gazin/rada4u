@@ -26,7 +26,10 @@ mps <- function(key) {
 
       response <-  httr::content(request, as = 'text')
 
-      response <- jsonlite::fromJSON(response)
+      response <- jsonlite::fromJSON(response, flatten = TRUE)
+
+      names(response) <- c('id', 'member_id', 'electorate', 'house', 'party',
+                           'name_first', 'name_last')
     }
 
   }
